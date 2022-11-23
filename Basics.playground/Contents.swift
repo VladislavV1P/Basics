@@ -36,7 +36,7 @@ print("Swift использует строковую интерполяцию \(
  /*позволяют быстро и легко комментировать большие блоки кода */
  , даже если код уже содержит многострочные комментарии.*/
 
-//Целочисленные границы
+//🌀Целочисленные границы
 let minValue = UInt8.min
 let maxValue = UInt8.max
 
@@ -247,6 +247,23 @@ precondition(index > 0, "Index must be greater than zero.")
 //fatalError(_:file:line:) всегда останавливает код
 //лучше использовать debugPrint()
 debugPrint("/...")
+
+//▶️1) Создать хараĸтеристиĸи студента через константы: имя, фамилия,
+//отчество, год рождения, рост, вес.
+
+let firstNameStudent = "Nica"
+let LastNameStudent = "Gold"
+let patronymicStudent = "Olegovna"
+let yearOfBirth = 1997
+let height = 187
+let weight = 70
+//Затем вывести все эти параметры красиво в консоль
+print("Student:")
+print("name: \(firstNameStudent) \(patronymicStudent)")
+print("last name: \(LastNameStudent)")
+print("Year of birth: \(yearOfBirth) year")
+print("Height: \(height) cm")
+print("Weight: \(weight) kg")
 
 
 
