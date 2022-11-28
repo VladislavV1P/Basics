@@ -66,7 +66,7 @@ let randomInt = Int.random(in: -10...10)
 let randomFloat = Float.random(in: -100.0...100.0)
 let randomDouble = Double.random(in: -1000...1000)
 
-let sumInt = randomInt + Int(randomFloat) + Int(randomDouble)
+let sumInt = Int(Double(randomInt) + Double(randomFloat) + randomDouble)
 let sumFloat = Float(randomInt) + randomFloat + Float(randomDouble)
 let sumDouble = Double(randomInt) + Double(randomFloat) + randomDouble
 
