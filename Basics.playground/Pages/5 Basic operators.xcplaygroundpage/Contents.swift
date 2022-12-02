@@ -174,11 +174,38 @@ sum += 1
 // 2 посчитать в каком квартале родился
 // 3 шахматная доска , нужно определить какое поле черное или белое
 
-let year = 365
+let dayInYear = 365
 let secondsInDay = 24 * 60 * 60
+let dayImMonth = 30
+//
+//var numberOfSeconds = ((year - 18) + year * 35 + (year - 48)) * secondsInDay
+//print("секунд прожито = \(numberOfSeconds)")
 
-var numberOfSeconds = ((year - 18) + year * 35 + (year - 48)) * secondsInDay
-print("секунд прожито = \(numberOfSeconds)")
+let myBirthday = (year: 1987, month: 1, day: 18)
+let toDay = (toYear: 2022, toMonth: 12, toDay: 2)
+
+var numberOfSeconds = 0
+
+
+
+if toDay.toMonth == myBirthday.month {
+    if toDay.toDay == myBirthday.day {
+        numberOfSeconds = (toDay.toYear - myBirthday) * secondsInDay * dayInYear
+    } else if toDay.toDay < myBirthday.day {
+        numberOfSeconds = ((toDay.toYear - myBirthday) * dayInYear - (myBirthday - toDay)) * secondsInDay
+    } else {
+        numberOfSeconds = ((toDay.toYear - myBirthday) * dayInYear + (toDay.toDay - myBirthday.day)) * secondsInDay
+    }
+} else if toDay.toMonth > myBirthday.month {
+    if toDay.toDay == myBirthday.day {
+        numberOfSeconds = numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) * dayImMonth * secondsInDay * dayInYear
+    } else if toDay.toDay < myBirthday.day {
+        numberOfSeconds = (numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) - (myBirthday - toDay)) * secondsInDay
+    } else {
+        numberOfSeconds = (numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) + (toDay.toDay - myBirthday.day)) * secondsInDay
+    }
+}
+numberOfSeconds
 
 
 let myDay = 18
@@ -197,6 +224,13 @@ if myDay <= quarterOfBirth1 {
     print("I was born in the 4th quarter")
 }
 
-var yourPosition: (horizontal: Int, vertical: Int)
+var yourPosition = (horizon: 3, vertical: 6)
 
+var posHorizon = yourPosition.horizon % 2
+var posVertical = yourPosition.vertical % 2
 
+if posHorizon == posVertical {
+    print("black cage")
+} else {
+    print("white cage")
+}
