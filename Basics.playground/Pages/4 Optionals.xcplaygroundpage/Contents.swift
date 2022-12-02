@@ -31,7 +31,7 @@ import Foundation
 let const1 = "12"
 let const2 = "332f"
 let const3 = "0x4"
-let const4 = "34"
+let const4 = "35"
 let const5 = "045"
 
 let anwrap1 = Int(const1)!
@@ -63,7 +63,7 @@ print(responseFromServer)
 
 var student1: (name: String, carPlate: String?, grade: Int?)
 
-student1.name = "Abram"
-student1.grade = 2
-
+student1.name = "Abra"
 student1
+
+
