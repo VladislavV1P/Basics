@@ -50,3 +50,20 @@ if let anwrap3 {
 }
 
 sum += anwrap1 + anwrap4 + anwrap5
+
+var responseFromServer: (statusCode: Int, message: String?, errorMessage: String?)
+
+responseFromServer.statusCode = 200
+responseFromServer.message = "OK"
+responseFromServer.errorMessage = nil
+
+print(responseFromServer)
+
+//3
+
+var student1: (name: String, carPlate: String?, grade: Int?)
+
+student1.name = "Abram"
+student1.grade = 2
+
+student1
