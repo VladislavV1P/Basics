@@ -4,5 +4,6 @@
         <page name='1 Basics'/>
         <page name='2 Basic Types'/>
         <page name='3 Tuples'/>
+        <page name='4 Optionals'/>
     </pages>
 </playground>
