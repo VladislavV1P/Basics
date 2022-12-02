@@ -80,5 +80,123 @@ question ? answer1 : answer2
 //a != nil ? a! : b
 // заменяется на var c = a ?? b
 
+let defaultColorName = "red"
+var userDefinedColorName: String?   // defaults to nil
+
+var colorNameToUse = userDefinedColorName ?? defaultColorName
+
+//🌀Оператор диапазона
+//Оператор замкнутого диапазона (a...b)
+for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+
+//Оператор Half-Open Range (a..<b)
+let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+for i in 0..<count {
+    print("Person \(i + 1) is called \(names[i])")
+}
+
+//Односайдовые диапазоны [2...] от индекса 2 до конца массива
+for name in names[2...] {
+    print(name)
+}
+
+for name in names[...2] {
+    print(name)
+}
+
+for name in names[..<2] {
+    print(name)
+}
+
+let range = ...5
+range.contains(7) // false
+range.contains(-4)// true
+
+//🌀Логические операторы
+/*
+Logical NOT (!a)
+
+Logical AND (a && b)
+
+Logical OR (a || b)
+*/
+let allowedEntry = false
+if !allowedEntry {
+    print("ACCESS DENIED")
+}
+// Prints "ACCESS DENIED"
+
+let enteredDoorCode = true
+let passedRetinaScan = false
+if enteredDoorCode && passedRetinaScan {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "ACCESS DENIED"
+
+let hasDoorKey = false
+let knowsOverridePassword = true
+if hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "Welcome!"
+
+//Объединение логических операторов
+
+if enteredDoorCode && passedRetinaScan || hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "Welcome!"
+
+// ДЗ
+
+let s: Double = 5
+let d: Double = 6
+s/d
+
+//Оператор переполнения &+ &- &* &/ &%
+let ass = UInt8.max
+ass &+ 4
+
+var sum = 5
+sum += 1
+
+
+// 1 посчитать сколько секунд прошло с вашего дня рождения
+// 2 посчитать в каком квартале родился
+// 3 шахматная доска , нужно определить какое поле черное или белое
+
+let year = 365
+let secondsInDay = 24 * 60 * 60
+
+var numberOfSeconds = ((year - 18) + year * 35 + (year - 48)) * secondsInDay
+print("секунд прожито = \(numberOfSeconds)")
+
+
+let myDay = 18
+let quarterOfBirth1 = 91
+let quarterOfBirth2 = 182
+let quarterOfBirth3 = 273
+let quarterOfBirth4 = 365
+
+if myDay <= quarterOfBirth1 {
+    print("I was born in the 1st quarter")
+} else if myDay <= quarterOfBirth2 {
+    print("I was born in the 2nd quarter")
+} else if myDay <= quarterOfBirth3 {
+    print("I was born in the 3rd quarter")
+} else {
+    print("I was born in the 4th quarter")
+}
+
+var yourPosition: (horizontal: Int, vertical: Int)
 
 
