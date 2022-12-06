@@ -184,27 +184,30 @@ let dayImMonth = 30
 let myBirthday = (year: 1987, month: 1, day: 18)
 let toDay = (toYear: 2022, toMonth: 12, toDay: 2)
 
-var numberOfSeconds = 0
+var numberOfSeconds: Int = 0
 
 
 
-if toDay.toMonth == myBirthday.month {
-    if toDay.toDay == myBirthday.day {
-        numberOfSeconds = (toDay.toYear - myBirthday) * secondsInDay * dayInYear
-    } else if toDay.toDay < myBirthday.day {
-        numberOfSeconds = ((toDay.toYear - myBirthday) * dayInYear - (myBirthday - toDay)) * secondsInDay
-    } else {
-        numberOfSeconds = ((toDay.toYear - myBirthday) * dayInYear + (toDay.toDay - myBirthday.day)) * secondsInDay
-    }
-} else if toDay.toMonth > myBirthday.month {
-    if toDay.toDay == myBirthday.day {
-        numberOfSeconds = numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) * dayImMonth * secondsInDay * dayInYear
-    } else if toDay.toDay < myBirthday.day {
-        numberOfSeconds = (numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) - (myBirthday - toDay)) * secondsInDay
-    } else {
-        numberOfSeconds = (numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) + (toDay.toDay - myBirthday.day)) * secondsInDay
-    }
-}
+//if toDay.toMonth == myBirthday.month {
+//    if toDay.toDay == myBirthday.day {
+//        numberOfSeconds = (toDay.toYear - myBirthday) * secondsInDay * dayInYear
+//    } else if toDay.toDay < myBirthday.day {
+//        numberOfSeconds = ((toDay.toYear - myBirthday) * dayInYear - (myBirthday - toDay)) * secondsInDay
+//    } else {
+//        numberOfSeconds = ((toDay.toYear - myBirthday) * dayInYear + (toDay.toDay - myBirthday.day)) * secondsInDay
+//    }
+//} else if toDay.toMonth > myBirthday.month {
+//    if toDay.toDay == myBirthday.day {
+//        numberOfSeconds = numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) * dayImMonth * secondsInDay * dayInYear
+//    } else if toDay.toDay < myBirthday.day {
+//        numberOfSeconds = (numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) - (myBirthday - toDay)) * secondsInDay
+//    } else {
+//        numberOfSeconds = (numberOfSeconds = (toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) + (toDay.toDay - myBirthday.day)) * secondsInDay
+//    }
+//}
+
+//numberOfSeconds = ((toDay.toYear - myBirthday) * dayInYear + (toDay.toMonth - myBirthday.month) + (toDay.toDay - myBirthday.day)) * secondsInDay
+
 numberOfSeconds
 
 
