@@ -149,7 +149,7 @@ var word = "cafe"
 word += "\u{301}"
 print("the number of characters in \(word) is \(word.count)")
 
-//Доступ к строке и ее изменение
+//🌀Доступ к строке и ее изменение
 /*
  Каждое строковое значение имеет связанный тип индекса String.Index, который соответствует положению каждого символа в строке.
  */
@@ -159,7 +159,10 @@ greeting[greeting.startIndex] // G
 greeting[greeting.index(before: greeting.endIndex)] // !
 greeting[greeting.index(after: greeting.startIndex)] // u
 let index = greeting.index(greeting.startIndex, offsetBy: 7)
-greeting[index] // a
+// limitedBy полезен для того, чтобы смещение не вышло за пределы индекса. Это ограничивающий индекс. Поскольку смещение может превышать предел, этот метод возвращает необязательный. Он возвращает ноль, если индекс выходит за рамки.
+let index2 = greeting.index(greeting.startIndex, offsetBy: 7, limitedBy: greeting.endIndex) ?? greeting.startIndex
+
+greeting[index2] // a
 
 greeting[greeting.index(before: greeting.endIndex)]
 
@@ -185,5 +188,85 @@ welcome1
 let range = welcome1.index(welcome1.endIndex, offsetBy: -6)..<welcome1.endIndex
 welcome1.removeSubrange(range)
 
-//Подстроки
-let greeting1 = "Hello world!"
+welcome1.prefix(5)
+welcome1.suffix(6)
+
+//🌀Подстроки
+/*
+ В приведенном выше примере приветствие - это строка, что означает, что она имеет область памяти, где хранятся символы, составлящие строку. Поскольку начало является подстрокой приветствия, оно повторно использует память, используемую приветствием. Напротив, newString - это строка - когда она создается из подстроки, у нее есть собственное хранилище. На рисунке ниже показаны следующие отношения:
+ */
+let greeting1 = "Hello, world!"
+let index1 = greeting1.firstIndex(of: ",") ?? greeting1.endIndex
+let beginning = greeting1[..<index1]
+let newString = String(beginning)
+
+//🌀Сравнение строк
+//Swift предоставляет три способа сравнения текстовых значений: равенство строк и символов, равенство префиксов и равенство суффиксов
+/*
+ Равенство строк и символов проверяется оператором "равно" (==) и оператором "не равно" (! =)
+ */
+let quotation1 = "We're a lot alike, you and I."
+let sameQuotation = "We're a lot alike, you and I."
+if quotation1 == sameQuotation {
+    print("These two strings are considered equal")
+}
+/*
+ Два строковых значения (или два значения символов) считаются равными, если их расширенные кластеры графем канонически эквивалентны. Расширенные кластеры графем канонически эквивалентны, если они имеют одинаковое лингвистическое значение и внешний вид, даже если они состоят из разных скаляров Юникода за кулисами.
+ */
+
+let eAcuteQuestion = "Voulez-vous un caf\u{E9}?"
+let combinedEAcuteQuestion = "Voulez-vous un caf\u{65}\u{301}?"
+if eAcuteQuestion == combinedEAcuteQuestion {
+    print("These two strings are considered equal")
+}
+/*
+ И наоборот, ЛАТИНСКАЯ ЗАГЛАВНАЯ БУКВА A (U+0041 или "A"), используемая в английском языке, не эквивалентна КИРИЛЛИЧЕСКОЙ ЗАГЛАВНОЙ БУКВЕ A (U+0410 или "А"), используемой в русском языке. Персонажи визуально похожи, но не имеют одинакового лингвистического значения:
+ */
+
+let latinCapitalLetterA: Character = "\u{41}"
+let cyrillicCapitalLetterA: Character = "\u{0410}"
+if latinCapitalLetterA != cyrillicCapitalLetterA {
+    print("These two characters aren't equivalent.")
+}
+
+//Равенство префиксов и суффиксов
+/*
+ Чтобы проверить, имеет ли строка определенный строковый префикс или суффикс, вызовите методы string hasPrefix(_:) и hasSuffix(_:), оба из которых принимают один аргумент типа String и возвращают логическое значение.
+ */
+let romeoAndJuliet = [
+    "Act 1 Scene 1: Verona, A public place",
+    "Act 1 Scene 2: Capulet's mansion",
+    "Act 1 Scene 3: A room in Capulet's mansion",
+    "Act 1 Scene 4: A street outside Capulet's mansion",
+    "Act 1 Scene 5: The Great Hall in Capulet's mansion",
+    "Act 2 Scene 1: Outside Capulet's mansion",
+    "Act 2 Scene 2: Capulet's orchard",
+    "Act 2 Scene 3: Outside Friar Lawrence's cell",
+    "Act 2 Scene 4: A street in Verona",
+    "Act 2 Scene 5: Capulet's mansion",
+    "Act 2 Scene 6: Friar Lawrence's cell"
+]
+//Вы можете использовать метод hasPrefix(_:) с массивом romeoAndJuliet для подсчета количества сцен в акте 1 пьесы:
+var act1SceneCount = 0
+for scene in romeoAndJuliet {
+    if scene.hasPrefix("Act 1 ") {
+        act1SceneCount += 1
+    }
+}
+print("There are \(act1SceneCount) scenes in Act 1")
+
+//Аналогично, используйте метод hasSuffix(_:) для подсчета количества сцен, которые происходят в особняке Капулетти или вокруг него и ячейки монаха Лоуренса:
+var mansionCount = 0
+var cellCount = 0
+for scene in romeoAndJuliet {
+    if scene.hasSuffix("Capulet's mansion") {
+        mansionCount += 1
+    }
+    if scene.hasSuffix("Friar Lawrence's cell") {
+        cellCount += 1
+    }
+}
+print("\(mansionCount) mansion scenes; \(cellCount) cell scenes")
+
+
+
