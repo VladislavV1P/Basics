@@ -268,5 +268,41 @@ for scene in romeoAndJuliet {
 }
 print("\(mansionCount) mansion scenes; \(cellCount) cell scenes")
 
+//🌀Представления строк Unicode
+//Кроме того, получите доступ к значению String в одном из трех других представлений, совместимых с Unicode:
+/*
+ Коллекция единиц кода UTF-8 (доступ с помощью свойства utf8 строки)
 
+ Коллекция кодовых единиц UTF-16 (доступ с помощью свойства utf16 строки)
+
+ Коллекция 21-битных скалярных значений Unicode, эквивалентных форме кодирования строки UTF-32 (доступно с помощью свойства unicodeScalars строки)
+ */
+//Представительство UTF-8
+let dogString = "Dog‼🐶"
+for codeUnit in dogString.utf8 {
+    print("\(codeUnit)", terminator: ", ")
+}
+print("")
+
+//Представительство UTF-16
+for codeUnit in dogString.utf16 {
+    print("\(codeUnit)", terminator: ", ")
+}
+print("")
+
+//UnicodeScalar UInt32
+for codeUnit in dogString.unicodeScalars {
+    print("\(codeUnit.value)", terminator: ", ")
+}
+print("")
+
+for codeUnit in dogString.unicodeScalars {
+    print("\(codeUnit)", terminator: ", ")
+}
+print("")
+
+for codeUnit in dogString.indices {
+    print("\(codeUnit)", terminator: ", ")
+}
+print("")
 
