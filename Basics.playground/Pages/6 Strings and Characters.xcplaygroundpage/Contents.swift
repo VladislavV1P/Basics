@@ -163,7 +163,27 @@ greeting[index] // a
 
 greeting[greeting.index(before: greeting.endIndex)]
 
+//Используйте свойство indices для доступа ко всем индексам отдельных символов в строке.
 for a in greeting.indices {
     print(a , " \(greeting[a])")
 }
 
+//Вставка и удаление
+/*
+ Чтобы вставить один символ в строку с указанным индексом, используйте метод insert(_:at:), а чтобы вставить содержимое другой строки в указанный индекс, используйте метод insert(contentsOf:at:).
+ */
+var welcome1 = "Hello"
+welcome1.insert("!", at: welcome1.endIndex)
+welcome1.insert(contentsOf: " there", at: welcome1.index(before: welcome1.endIndex))
+
+/*
+ Чтобы удалить один символ из строки с указанным индексом, используйте метод remove(at:), а чтобы удалить подстроку в указанном диапазоне, используйте метод removeSubrange(_:):
+ */
+welcome1.remove(at: welcome1.index(before: welcome1.endIndex))
+welcome1
+
+let range = welcome1.index(welcome1.endIndex, offsetBy: -6)..<welcome1.endIndex
+welcome1.removeSubrange(range)
+
+//Подстроки
+let greeting1 = "Hello world!"
