@@ -98,6 +98,8 @@ for character in "Dog!🐶" {
 let exclamationMark: Character = "!"
 let catCharacters: [Character] = ["C", "a", "t", "!", "🐱"]
 let catString = String(catCharacters)
+(catString as NSString).length
+
 
 //Объединяющие строки и символы
 let string1 = "hello"
@@ -219,6 +221,10 @@ let combinedEAcuteQuestion = "Voulez-vous un caf\u{65}\u{301}?"
 if eAcuteQuestion == combinedEAcuteQuestion {
     print("These two strings are considered equal")
 }
+
+combinedEAcuteQuestion.count
+(combinedEAcuteQuestion as NSString).length
+print("\n\(combinedEAcuteQuestion.count),    \((combinedEAcuteQuestion as NSString).length)")
 /*
  И наоборот, ЛАТИНСКАЯ ЗАГЛАВНАЯ БУКВА A (U+0041 или "A"), используемая в английском языке, не эквивалентна КИРИЛЛИЧЕСКОЙ ЗАГЛАВНОЙ БУКВЕ A (U+0410 или "А"), используемой в русском языке. Персонажи визуально похожи, но не имеют одинакового лингвистического значения:
  */
@@ -305,4 +311,8 @@ for codeUnit in dogString.indices {
     print("\(codeUnit)", terminator: ", ")
 }
 print("")
+
+//длина строки
+(greeting as NSString).length
+greeting.count
 
