@@ -6,8 +6,5 @@
         <page name='3 Tuples'/>
         <page name='4 Optionals'/>
         <page name='5 Basic operators'/>
-        <page name='6 Strings and Characters'/>
-        <page name='6 String operators'/>
-        <page name='6 String Home Work'/>
     </pages>
 </playground>
