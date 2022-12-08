@@ -7,5 +7,6 @@
         <page name='4 Optionals'/>
         <page name='5 Basic operators'/>
         <page name='6 Strings and Characters'/>
+        <page name='6 String operators'/>
     </pages>
 </playground>
