@@ -4,7 +4,7 @@ import Foundation
 
 //Strings and Characters
 //Строковые литералы ""
-let someString = "Some string literal value"
+let someString: String = "Some string literal value"
 
 //Многострочные строковые литералы """ ... """
 let quotation = """
