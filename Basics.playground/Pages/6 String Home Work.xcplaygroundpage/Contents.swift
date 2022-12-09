@@ -90,3 +90,5 @@ strSum += String(sum)
 
 arrayStrSum[arrayStrSum.count - 1]
 var lastArray = arrayStrSum.removeLast()
+arrayStrSum
+      
