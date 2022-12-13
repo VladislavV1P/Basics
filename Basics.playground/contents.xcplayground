@@ -9,6 +9,7 @@
         <page name='6 String Home Work'/>
         <page name='6 String operators'/>
         <page name='6 Strings and Characters'/>
-        <page name='7 Collection Types'/>
+        <page name='7 Collection Types Array'/>
+        <page name='7 Collection Type - Set'/>
     </pages>
 </playground>
