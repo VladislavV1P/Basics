@@ -11,5 +11,6 @@
         <page name='6 Strings and Characters'/>
         <page name='7 Collection Types Array'/>
         <page name='7 Collection Type - Set'/>
+        <page name='Ya - Bug in the library'/>
     </pages>
 </playground>

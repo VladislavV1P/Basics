@@ -23,5 +23,14 @@ setThere.count
 let boolValue = setThere.contains(3)
 
 let setFromOneToThere: Set = [1, 2, 3]
-let setFromFourToNine: Set = [4, 5, 6, 7, 8, 9]
+let setFromFourToNine: Set = [3, 4, 5, 6, 7, 8, 9]
+
+//объединение
+let commonArray = setFromOneToThere.union(setFromFourToNine).sorted()
+//пересечение
+let commonValuesSet = setFromOneToThere.intersection(setFromFourToNine)
+// не пересекающиеся массив
+let notRepeatValuesArray = setFromOneToThere.symmetricDifference(setFromFourToNine).sorted()
+// все уникальные значения первого сета
+let subtractingValueSet = setFromOneToThere.subtracting(setFromFourToNine).sorted()
 
