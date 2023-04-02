@@ -94,3 +94,7 @@ for index in alphabetArray.indices {
     alphabetString.append(String(alphabetArray[lastIndex1 - index]))
 }
 alphabetString
+
+for char in alphabetArray {
+    alphabetString.insert(String(char), at: 0)
+}

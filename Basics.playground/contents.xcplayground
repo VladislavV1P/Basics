@@ -13,6 +13,9 @@
         <page name='7 Collection Type - Set'/>
         <page name='Ya - Bug in the library'/>
         <page name='7 Collection Type - Dictionary'/>
-        <page name='7 Collection Home Work'/>
+        <page name='7 Collection Home Work array'/>
+        <page name='8 Control Flow - For in'/>
+        <page name='8 Control Flow - While  IF'/>
+        <page name='8 Control Flow - Switch'/>
     </pages>
 </playground>
